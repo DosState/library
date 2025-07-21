@@ -6,20 +6,27 @@ function Book(title, author, pages, readFlag){
     this.author = author;
     this.pages = pages;
     this.readFlag = readFlag;
-
-    this.info = function(){
-        let readBook = "";
-        if (this.readFlag===true){
-            readBook = "not read yet";
-        }
-        else{
-            readBook = "already read";
-        }
-        return  `${this.title} by ${this.author} of ${this.pages} pages, ${readBook}`;
-    }
+    this.id = crypto.randomUUID();
 }
 
-let book = new Book("aomondo", "bibbulu", 128, true)
-console.log(book.info())
-book = new Book("labbolo", "costanzo", 12248, false)
-console.log(book.info())
+Book.prototype.info = function(){
+    let readBook = "";
+    if (this.readFlag===true){
+        readBook = "not read yet";
+    }
+    else{
+        readBook = "already read";
+    }
+    return  `${this.title} by ${this.author} of ${this.pages} pages, ${readBook}`;
+}
+
+function addBookToLibrary(title, author, pages, library){
+    let book = new Book(title, author, pages, false);
+    library.push(book);
+}
+
+const myLibrary = [];
+addBookToLibrary("aomondo", "bibbulu", 128, myLibrary)
+console.log(myLibrary)
+addBookToLibrary("labbolo", "costanzo", 12248, myLibrary)
+console.log(myLibrary)

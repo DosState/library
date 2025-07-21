@@ -7,6 +7,70 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="header">
+        My Personal Library
+    </div>
+
+    <div class="controls">
+        <button class="new-book-btn" onclick="openNewBookDialog()">+ Add New Book</button>
+    </div>
+
+    <div class="container">
+        <table>
+            <caption>Books Collection</caption>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Pages</th>
+                    <th>Read Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <dialog id="newBookDialog">
+        <div class="dialog-content">
+            <div class="dialog-header">
+                <h2 class="dialog-title">Add New Book</h2>
+                <button class="close-btn" onclick="closeNewBookDialog()">&times;</button>
+            </div>
+            
+            <form id="newBookForm">
+                <div class="form-group">
+                    <label for="bookTitle">Title:</label>
+                    <input type="text" id="bookTitle" name="title" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="bookAuthor">Author:</label>
+                    <input type="text" id="bookAuthor" name="author" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="bookPages">Number of Pages:</label>
+                    <input type="number" id="bookPages" name="pages" min="1" required>
+                </div>
+                
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="bookRead" name="read">
+                        <label for="bookRead">I have read this book</label>
+                    </div>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="cancel-btn" onclick="closeNewBookDialog()">Cancel</button>
+                    <button type="submit" class="submit-btn">Add Book</button>
+                </div>
+            </form>
+        </div>
+    </dialog>
+
     <script src="./book.js"></script>
 </body>
 </html>

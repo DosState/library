@@ -1,0 +1,40 @@
+/* -- CSS Bleggi Reset style --*/
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+  @font-face {
+    font-family: 'Bank Printer';
+    src: url('src/F25_Bank_Printer.woff2') format('woff2'),
+        url('src/F25_Bank_Printer.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; /* Improves loading performance */
+}
+
+* {
+    margin: 0;
+    --sidebar-background-rgb: 94,159,255;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+p {
+    text-wrap: pretty;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+}
+/* -- End Reset style --*/
